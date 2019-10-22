@@ -13,9 +13,9 @@ class BottomSheetWidget extends StatelessWidget{
         ),
         body: Builder(builder: (context){
           return RaisedButton(
-            child: Text('showBottomSheet'),
+            child: Text('showModalBottomSheet'),
             onPressed: (){
-              showBottomSheet(context: context, 
+              showModalBottomSheet(context: context,
                   builder:(context)=> BottomSheet(
                   onClosing: (){}, 
                       builder: (context)=>Container(
@@ -26,7 +26,7 @@ class BottomSheetWidget extends StatelessWidget{
                               onPressed: (){
                                 Navigator.of(context).pop();
                               },
-                            child: Text('dismissBottomSheet'),
+                            child: Text('dismissModalBottomSheet'),
                           ),
                         ),
                       )));
