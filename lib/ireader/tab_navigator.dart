@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_app/ireader/content_viewpager.dart';
 
 class TabNavigatorWidget extends StatefulWidget {
   @override
@@ -9,6 +10,7 @@ class _TabNavigatorWidgetState extends State<TabNavigatorWidget> {
   final _defaulgColor = Colors.grey;
   final _activeColor = Colors.blue;
   int _currentIndex = 0;
+  ContentPagerController _contentPagerController = ContentPagerController();
 
   @override
   Widget build(BuildContext context) {
@@ -21,17 +23,27 @@ class _TabNavigatorWidgetState extends State<TabNavigatorWidget> {
                 colors: [Color(0xffedeef0), Color(0xffe6e7e9)],
                 begin: Alignment.topCenter,
                 end: Alignment.bottomCenter)),
-        child: Center(
+        /*child: Center(
           child: Text(
             '你点击了第$_currentIndex个Tab',
             style: TextStyle(color: Colors.blue,fontSize: 36),
           ),
+        ),*/
+        child: ContentViewPager(
+          onPageChanged: (index){
+            setState(() {
+              _currentIndex = index;
+            });
+          },
+          contentPagerController: _contentPagerController,
         ),
       ),
       bottomNavigationBar: BottomNavigationBar(
           type: BottomNavigationBarType.fixed,
           currentIndex: _currentIndex,
           onTap: (index) {
+            _contentPagerController.jumpToPage(index);
+
             setState(() {
               _currentIndex = index;
             });
