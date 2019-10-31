@@ -19,4 +19,9 @@ samples, guidance on mobile development, and a full API reference.
 
 ireader like weichat reader
 
+viewpager+tab切换
 
+<div style="float:left">
+<img width="150" height="250" src="images/viewpager.png"/>
+</div>
+<div style="clear:both"></div>

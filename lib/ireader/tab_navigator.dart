@@ -49,10 +49,10 @@ class _TabNavigatorWidgetState extends State<TabNavigatorWidget> {
             });
           },
           items: [
-            _bottomItem('本周', Icons.folder, 0),
-            _bottomItem('分享', Icons.share, 1),
-            _bottomItem('免费', Icons.free_breakfast, 2),
-            _bottomItem('我的', Icons.near_me, 3)
+            _bottomItem('发现', Icons.folder, 0),
+            _bottomItem('书架', Icons.share, 1),
+            _bottomItem('故事', Icons.free_breakfast, 2),
+            _bottomItem('我', Icons.near_me, 3)
           ]),
     );
   }
