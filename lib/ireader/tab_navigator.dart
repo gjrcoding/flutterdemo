@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_app/ireader/content_viewpager.dart';
 
+import 'custom_appbar.dart';
+
 class TabNavigatorWidget extends StatefulWidget {
   @override
   _TabNavigatorWidgetState createState() => _TabNavigatorWidgetState();
@@ -75,3 +77,4 @@ class _TabNavigatorWidgetState extends State<TabNavigatorWidget> {
         ));
   }
 }
+

@@ -1,12 +1,15 @@
 import 'package:flutter/material.dart';
+import 'package:flutter/services.dart';
+import 'package:flutter_app/ireader/custom_appbar.dart';
 
 class ContentViewPager extends StatefulWidget {
   final ValueChanged<int> onPageChanged;
 
-
   final ContentPagerController contentPagerController;
 
-  const ContentViewPager({Key key, this.onPageChanged, this.contentPagerController}) : super(key: key);
+  const ContentViewPager(
+      {Key key, this.onPageChanged, this.contentPagerController})
+      : super(key: key);
 
   @override
   _ContentViewPagerState createState() => _ContentViewPagerState();
@@ -20,12 +23,13 @@ class _ContentViewPagerState extends State<ContentViewPager> {
     Colors.green
   ];
 
-
   @override
   void initState() {
-    if(widget.contentPagerController!=null){
+    if (widget.contentPagerController != null) {
       widget.contentPagerController._pageController = _pageController;
     }
+    _statusBar();
+    super.initState();
   }
 
   PageController _pageController = PageController(
@@ -37,6 +41,7 @@ class _ContentViewPagerState extends State<ContentViewPager> {
     return Column(
       children: <Widget>[
         //appbar
+        CustomAppBar(),
         Expanded(
             child: PageView(
           controller: _pageController,
@@ -59,6 +64,19 @@ class _ContentViewPagerState extends State<ContentViewPager> {
         decoration: BoxDecoration(color: _listColors[index]),
       ),
     );
+  }
+
+  //沉浸式状态栏
+  _statusBar(){
+    SystemUiOverlayStyle uiOverlayStyle = SystemUiOverlayStyle(
+      systemNavigationBarColor: Color(0xFF000000),//虚拟键背景色
+      systemNavigationBarDividerColor: null,
+      statusBarColor: Colors.transparent,//状态栏背景色
+      systemNavigationBarIconBrightness: Brightness.light,
+      statusBarIconBrightness: Brightness.dark,
+      statusBarBrightness: Brightness.light,
+    );
+    SystemChrome.setSystemUIOverlayStyle(uiOverlayStyle);
   }
 }
 
