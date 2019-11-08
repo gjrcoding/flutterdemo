@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:flutter_app/ireader/custom_appbar.dart';
+import 'demo_pager.dart';
 
 class ContentViewPager extends StatefulWidget {
   final ValueChanged<int> onPageChanged;
@@ -34,7 +35,7 @@ class _ContentViewPagerState extends State<ContentViewPager> {
 
   PageController _pageController = PageController(
       //视窗比例
-      viewportFraction: 0.8);
+      viewportFraction: 0.9);
 
   @override
   Widget build(BuildContext context) {
@@ -46,7 +47,7 @@ class _ContentViewPagerState extends State<ContentViewPager> {
             child: PageView(
           controller: _pageController,
           children: <Widget>[
-            _wrapPageItem(0),
+            DemoListWidget(),
             _wrapPageItem(1),
             _wrapPageItem(2),
             _wrapPageItem(3),

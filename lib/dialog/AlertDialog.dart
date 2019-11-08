@@ -1,14 +1,15 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_app/base/MyAppWidget.dart';
 
-void main() => runApp(AlertWidget());
+void main() => runApp(MyAlertWidget());
 
-class AlertWidget extends StatelessWidget{
+class MyAlertWidget extends StatelessWidget{
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
       title: 'test',
       home: Scaffold(
-        appBar: AppBar(title: new Text('alertDialog'),),
+        appBar: MyAppWidget.appBarWidget(context, 'alertDialog'),
         body: Builder(builder: (context){
           return RaisedButton(
             onPressed: (){

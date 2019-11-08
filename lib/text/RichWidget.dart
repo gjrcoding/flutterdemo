@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_app/base/MyAppWidget.dart';
 
 void main() => runApp(RichWidget());
 
@@ -7,13 +8,9 @@ class RichWidget extends StatelessWidget{
   Widget build(BuildContext context) {
     return MaterialApp(
       title: 'Text Widget',
-      theme: ThemeData(
-          primaryColor: Colors.blue
-      ),
+      theme: ThemeData(),
       home: Scaffold(
-        appBar: AppBar(
-          title: Text('Rich Widget'),
-        ),
+        appBar: MyAppWidget.appBarWidget(context, 'Rich Widget'),
         body: RichText(
           text: TextSpan(
             children: [

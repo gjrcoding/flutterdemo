@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_app/base/MyAppWidget.dart';
 /**
  * 弹性布局：flex，类似css的flexbox
  */
@@ -11,14 +12,9 @@ class FlexFexWidget extends StatelessWidget{
     // TODO: implement build
     return MaterialApp(
       title: 'flex',
-      theme: ThemeData(
-          primaryColor: Colors.yellow
-      ),
+      theme: ThemeData(),
       home: Scaffold(
-        appBar: AppBar(
-          title: Text('flex'),
-          backgroundColor: Colors.yellow,
-        ),
+        appBar: MyAppWidget.appBarWidget(context, 'flex'),
         body: Container(
           child: Flex(
             direction: Axis.horizontal,

@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_app/base/MyAppWidget.dart';
 
 void main() =>  runApp(MenuWidget());
 
@@ -8,14 +9,9 @@ class MenuWidget extends StatelessWidget{
     // TODO: implement build
     return MaterialApp(
       title: 'test menu',
-      theme: ThemeData(
-        primaryColor: Colors.pink
-      ),
+      theme: ThemeData(),
       home: Scaffold(
-        appBar: AppBar(
-          title: Text('Menu Widget'),
-          backgroundColor: Colors.pink,
-        ),
+        appBar: MyAppWidget.appBarWidget(context, 'Menu Widget'),
         body: PopupMenuButton<MenuItem>(
           child: Text('更多'),
           onSelected: (MenuItem result){

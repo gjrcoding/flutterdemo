@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_app/base/MyAppWidget.dart';
 
 void main() => runApp(RowWidget());
 
@@ -11,11 +12,9 @@ class RowWidget extends StatelessWidget {
     // TODO: implement build
     return MaterialApp(
       title: 'flutter demo',
-      theme: ThemeData(primaryColor: Colors.blue),
+      theme: ThemeData(),
       home: Scaffold(
-        appBar: AppBar(
-          title: Text('线性布局'),
-        ),
+        appBar: MyAppWidget.appBarWidget(context, '线性布局'),
         body: Row(
           children: <Widget>[
             Text('hello flutter'),

@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_app/base/MyAppWidget.dart';
 
 void main() =>  runApp(WrapWidget());
 
@@ -9,11 +10,9 @@ class WrapWidget extends StatelessWidget{
     // TODO: implement build
     return MaterialApp(
       title: 'flutter demo',
-      theme: ThemeData(primaryColor: Colors.blue),
+      theme: ThemeData(),
       home: Scaffold(
-        appBar: AppBar(
-          title: Text('流式布局'),
-        ),
+        appBar: MyAppWidget.appBarWidget(context, '流式布局'),
         body: Wrap(
           children: <Widget>[
             Text('hello flutter' * 50),

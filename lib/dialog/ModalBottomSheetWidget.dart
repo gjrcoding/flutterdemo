@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_app/base/MyAppWidget.dart';
 
 void main() =>  runApp(BottomSheetWidget());
 
@@ -8,9 +9,7 @@ class BottomSheetWidget extends StatelessWidget{
     return MaterialApp(
       title:'BottomSheet',
       home: Scaffold(
-        appBar: AppBar(
-          title: Text('BottomSheet'),
-        ),
+        appBar: MyAppWidget.appBarWidget(context, 'BottomSheet'),
         body: Builder(builder: (context){
           return RaisedButton(
             child: Text('showModalBottomSheet'),

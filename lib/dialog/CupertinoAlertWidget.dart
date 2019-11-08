@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/cupertino.dart';
+import 'package:flutter_app/base/MyAppWidget.dart';
 
 void main() => runApp(CupertinoAlertWidget());
 
@@ -9,7 +10,7 @@ class CupertinoAlertWidget extends StatelessWidget{
    return MaterialApp(
      title: 'cupertinoalert',
      home: Scaffold(
-       appBar: AppBar(title: Text('cupertino alert'),),
+       appBar: MyAppWidget.appBarWidget(context, 'cupertino alert'),
        body: Builder(builder: (context){
          return RaisedButton(
            child: Text('show cupertino alert'),

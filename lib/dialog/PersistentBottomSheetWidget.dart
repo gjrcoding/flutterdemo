@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_app/base/MyAppWidget.dart';
 
 void main() => runApp(PersistentBottomSheetWidget());
 
@@ -9,7 +10,7 @@ class PersistentBottomSheetWidget extends StatelessWidget {
     return MaterialApp(
       title: 'test',
       home: Scaffold(
-        appBar: AppBar(title: Text('persistent bottom sheet'),),
+        appBar: MyAppWidget.appBarWidget(context, 'persistent bottom sheet'),
         body: Builder(builder: (context) {
           return RaisedButton(
               child: Text('showPersistentBottomSheet'),

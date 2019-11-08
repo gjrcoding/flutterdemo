@@ -1,17 +1,16 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_app/base/MyAppWidget.dart';
 
-void main() => runApp(ImageWidget());
+void main() => runApp(IconImageWidget());
 
-class ImageWidget extends StatelessWidget{
+class IconImageWidget extends StatelessWidget{
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
       title: "Flutter Demo",
-      theme: ThemeData(
-        primaryColor: Colors.blue,
-      ),
+      theme: ThemeData(),
       home: Scaffold(
-        appBar: AppBar(title: Text("Flutter UI基础Widget -- Icon")),
+        appBar: MyAppWidget.appBarWidget(context, "Flutter UI基础Widget -- Icon"),
         body: Icon(
           Icons.android,
           size: 100.0,

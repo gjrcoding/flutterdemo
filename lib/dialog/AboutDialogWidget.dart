@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_app/base/MyAppWidget.dart';
 
 void main() => runApp(AboutDialogWidget());
 
@@ -12,11 +13,9 @@ class AboutDialogWidget extends StatelessWidget{
   Widget build(BuildContext context) {
     return MaterialApp(
       title: 'hello dialog',
-      theme: ThemeData(
-        primaryColor: Colors.yellow
-      ),
+      theme: ThemeData(),
       home: Scaffold(
-        appBar: AppBar(title: Text('hello dialog'),),
+        appBar: MyAppWidget.appBarWidget(context, 'hello dialog'),
         body: Builder(builder: (context)=> RaisedButton(
           onPressed: (){
             showAboutDialog(context: context,

@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_app/base/MyAppWidget.dart';
 
 void main() =>  runApp(SnackBarWidget());
 
@@ -8,13 +9,9 @@ class SnackBarWidget extends StatelessWidget{
   Widget build(BuildContext context) {
     return MaterialApp(
       title: 'snack bar',
-      theme: ThemeData(
-          primaryColor: Colors.orange
-      ),
+      theme: ThemeData(),
       home: Scaffold(
-        appBar: AppBar(
-          title: Text('hello snack bar'),
-        ),
+        appBar: MyAppWidget.appBarWidget(context, 'hello snack bar'),
         body: Builder(builder: (context)=>RaisedButton(onPressed: (){
           Scaffold.of(context).showSnackBar(
               SnackBar(

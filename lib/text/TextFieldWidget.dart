@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_app/base/MyAppWidget.dart';
 
 void main() => runApp(TextFieldWidget());
 
@@ -13,11 +14,9 @@ class TextFieldWidget extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
       title: 'hello textfield',
-      theme: ThemeData(primaryColor: Colors.yellow),
+      theme: ThemeData(),
       home: Scaffold(
-        appBar: AppBar(
-          title: Text('hello textfield'),
-        ),
+        appBar: MyAppWidget.appBarWidget(context, 'hello textfield'),
         body: TextField(
           controller: _controller,
           textInputAction: TextInputAction.done,

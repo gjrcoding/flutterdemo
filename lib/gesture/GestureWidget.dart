@@ -1,21 +1,17 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_app/base/MyAppWidget.dart';
 
-void main() => runApp(GestureWidget());
+void main() => runApp(GestureActionWidget());
 
-class GestureWidget extends StatelessWidget{
+class GestureActionWidget extends StatelessWidget{
   @override
   Widget build(BuildContext context) {
     // TODO: implement build
     return MaterialApp(
       title: 'gesture',
-      theme: ThemeData(
-        primaryColor: Colors.green,
-      ),
+      theme: ThemeData(),
       home: Scaffold(
-        appBar: AppBar(
-          title: Text('gesture'),
-          backgroundColor: Colors.green,
-        ),
+        appBar: MyAppWidget.appBarWidget(context, 'gesture'),
         body: GestureDetector(
           child: Text('手势识别'),
           onTap: (){
