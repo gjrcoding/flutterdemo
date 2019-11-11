@@ -21,8 +21,6 @@ samples, guidance on mobile development, and a full API reference.
 
 [获取依赖 pub.dartlang.org/](pub.dartlang.org/)
 
-[json 转 dart 类](https://javiercbk.github.io/json_to_dart/)
-
 [json在线解析](https://app.quicktype.io/)
 
 ## choco https://chocolatey.org/install
