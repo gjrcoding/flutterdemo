@@ -17,11 +17,11 @@ class MyApp extends StatefulWidget{
   @override
   State<StatefulWidget> createState() {
     // TODO: implement createState
-    return MyAppState();
+    return ConstraintWidget();
   }
 }
 
-class MyAppState extends State<MyApp>{
+class ConstraintWidget extends State<MyApp>{
   void increment(){
     setState(() {
       widget.content+='d';
