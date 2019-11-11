@@ -19,9 +19,9 @@ samples, guidance on mobile development, and a full API reference.
 
 [dart教程](https://flutterchina.club/bootstrap-into-dart/)
 
-[获取依赖 pub.dartlang.org/](pub.dartlang.org/)
+[获取依赖 - pub.dartlang.org/](pub.dartlang.org/)
 
-[json在线解析](https://app.quicktype.io/)
+[json在线解析dart - https://app.quicktype.io/](https://app.quicktype.io/)
 
 ## choco https://chocolatey.org/install
 
