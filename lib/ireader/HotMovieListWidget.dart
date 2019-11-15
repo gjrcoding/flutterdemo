@@ -1,18 +1,31 @@
 import 'dart:convert';
 
 import 'package:flutter/material.dart';
-import 'package:flutter_app/http/HtoMovieData.dart';
-import 'package:flutter_app/ireader/DoubanHotMovieWidget.dart';
-import 'package:flutter_app/ireader/HotMovieItem.dart';
+import 'package:flutterdemos/http/HtoMovieData.dart';
+import 'package:flutterdemos/ireader/DoubanHotMovieWidget.dart';
+import 'package:flutterdemos/ireader/HotMovieItem.dart';
 import 'package:http/http.dart' as http;
+import 'package:shared_preferences/shared_preferences.dart';
 
 class HotMovieListWidget extends StatefulWidget {
+  var currCity;
+
+  HotMovieListWidget(this.currCity);
+
   @override
   _HotMovieListWidgetState createState() => _HotMovieListWidgetState();
 }
 
-class _HotMovieListWidgetState extends State<HotMovieListWidget> with AutomaticKeepAliveClientMixin{
+class _HotMovieListWidgetState extends State<HotMovieListWidget>
+    with AutomaticKeepAliveClientMixin {
   List<HotMovieItem> hotMovieList = List();
+
+  @override
+  void didChangeDependencies() {
+    // TODO: implement didChangeDependencies
+    super.didChangeDependencies();
+    getRemoteData();
+  }
 
   @override
   void initState() {
@@ -26,7 +39,6 @@ class _HotMovieListWidgetState extends State<HotMovieListWidget> with AutomaticK
     hotMovieList.add(data);
     hotMovieList.add(data);
     hotMovieList.add(data);*/
-
     getRemoteData();
   }
 
@@ -36,13 +48,13 @@ class _HotMovieListWidgetState extends State<HotMovieListWidget> with AutomaticK
   Future<void> getRemoteData() async {
     List<HotMovieItem> serverDataList = new List();
     var response = await http.get(
-        'https://api.douban.com/v2/movie/in_theaters?apikey=0b2bdeda43b5688921839c8ecb20399b&city=%E6%B7%B1%E5%9C%B3&start=0&count=10');
+        'https://api.douban.com/v2/movie/in_theaters?apikey=0b2bdeda43b5688921839c8ecb20399b&city=${widget.currCity}&start=0&count=10');
     //成功获取数据
     if (response.statusCode == 200) {
       print(response.body);
 
       Map<String, dynamic> jsonResponse = json.decode(response.body);
-      for(dynamic data in jsonResponse['subjects']){
+      for (dynamic data in jsonResponse['subjects']) {
         HotMovieItem hotMovieData = HotMovieItem.fromJson(data);
         serverDataList.add(hotMovieData);
       }
@@ -55,7 +67,8 @@ class _HotMovieListWidgetState extends State<HotMovieListWidget> with AutomaticK
 
   @override
   Widget build(BuildContext context) {
-    if(hotMovieList==null||hotMovieList.isEmpty){
+
+    if (hotMovieList == null || hotMovieList.isEmpty) {
       return Center(
         child: CircularProgressIndicator(),
       );
@@ -77,5 +90,5 @@ class _HotMovieListWidgetState extends State<HotMovieListWidget> with AutomaticK
   }
 
   @override
-  bool get wantKeepAlive => true;//返回true，表示不会被回收
+  bool get wantKeepAlive => true; //返回true，表示不会被回收
 }

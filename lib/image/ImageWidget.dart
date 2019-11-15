@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_app/base/MyAppWidget.dart';
+import 'package:flutterdemos/base/MyAppWidget.dart';
 
 void main() => runApp(ImageWidget());
 

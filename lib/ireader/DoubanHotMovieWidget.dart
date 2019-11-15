@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_app/http/HtoMovieData.dart';
+import 'package:flutterdemos/http/HtoMovieData.dart';
 
 import 'HotMovieItem.dart';
 

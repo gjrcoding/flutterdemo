@@ -1,7 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
-import 'package:flutter_app/ireader/custom_appbar.dart';
+import 'package:flutterdemos/ireader/custom_appbar.dart';
 import 'demo_pager.dart';
+import 'doubanwidget.dart';
 
 class ContentViewPager extends StatefulWidget {
   final ValueChanged<int> onPageChanged;
@@ -35,20 +36,18 @@ class _ContentViewPagerState extends State<ContentViewPager> {
 
   PageController _pageController = PageController(
       //视窗比例
-      viewportFraction: 0.9);
+      viewportFraction: 1.0);
 
   @override
   Widget build(BuildContext context) {
     return Column(
       children: <Widget>[
-        //appbar
-        CustomAppBar(),
         Expanded(
             child: PageView(
           controller: _pageController,
           children: <Widget>[
             DemoListWidget(),
-            _wrapPageItem(1),
+            DouBanWidget(),
             _wrapPageItem(2),
             _wrapPageItem(3),
           ],

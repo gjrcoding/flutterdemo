@@ -1,15 +1,17 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_app/boxconstraint/BoundedConstraintWidget.dart';
-import 'package:flutter_app/boxconstraint/InfiniteConstraintWidget.dart';
-import 'package:flutter_app/dialog/AlertDialog.dart';
-import 'package:flutter_app/funcwidget/DeviceTools.dart';
-import 'package:flutter_app/gesture/GestureWidget.dart';
-import 'package:flutter_app/http/JsonLoaderLoading.dart';
-import 'package:flutter_app/image/NetImageWidget.dart';
-import 'package:flutter_app/layout/ColumnWidget.dart';
-import 'package:flutter_app/menu/MenuWidget.dart';
-import 'package:flutter_app/text/TextWidget.dart';
-import 'package:flutter_app/toast/SnackBarWidget.dart';
+import 'package:flutterdemos/boxconstraint/BoundedConstraintWidget.dart';
+import 'package:flutterdemos/boxconstraint/InfiniteConstraintWidget.dart';
+import 'package:flutterdemos/dialog/AlertDialog.dart';
+import 'package:flutterdemos/funcwidget/DeviceTools.dart';
+import 'package:flutterdemos/gesture/GestureWidget.dart';
+import 'package:flutterdemos/http/JsonLoaderLoading.dart';
+import 'package:flutterdemos/image/NetImageWidget.dart';
+import 'package:flutterdemos/layout/ColumnWidget.dart';
+import 'package:flutterdemos/menu/MenuWidget.dart';
+import 'package:flutterdemos/text/TextWidget.dart';
+import 'package:flutterdemos/toast/SnackBarWidget.dart';
+
+import 'custom_appbar.dart';
 
 class DemoRoutes {
   String title;
@@ -34,29 +36,37 @@ class DemoListWidget extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Container(
-        color: Colors.white60,
-        child: ListView.separated(
-          itemCount: demoList.length,
-          itemBuilder: (context, index) {
-            return GestureDetector(
-              child: ListTile(
-                title: Text(demoList[index].title),
-              ),
-              onTap: () {
-                Navigator.of(context).push(MaterialPageRoute(builder: (_) {
-                  return demoList[index].route;
-                }));
-              },
-            );
-          },
-          separatorBuilder: (context, index) {
-            return Container(
-              constraints: BoxConstraints.tightFor(height: 0.5),
-              color: Colors.grey,
-            );
-          },
-        ));
+    return Column(
+      children: <Widget>[
+        //appbar
+        CustomAppBar(),
+        Expanded(
+            child: Container(
+                color: Colors.white,
+                child: ListView.separated(
+                  itemCount: demoList.length,
+                  itemBuilder: (context, index) {
+                    return GestureDetector(
+                      child: ListTile(
+                        title: Text(demoList[index].title),
+                      ),
+                      onTap: () {
+                        Navigator.of(context)
+                            .push(MaterialPageRoute(builder: (_) {
+                          return demoList[index].route;
+                        }));
+                      },
+                    );
+                  },
+                  separatorBuilder: (context, index) {
+                    return Container(
+                      constraints: BoxConstraints.tightFor(height: 0.5),
+                      color: Colors.grey,
+                    );
+                  },
+                )))
+      ],
+    );
   }
 }
 

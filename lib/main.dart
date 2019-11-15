@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_app/ireader/tab_navigator.dart';
+import 'package:flutterdemos/ireader/tab_navigator.dart';
+
+import 'ireader/CityWidget.dart';
 
 void main() => runApp(MyApp());
 
@@ -22,6 +24,11 @@ class MyApp extends StatelessWidget {
         primarySwatch: Colors.blue,
       ),
       home: TabNavigatorWidget(),
+      routes: {
+        '/Citys': (context) {
+          return CityWidget();
+        }
+      },
     );
   }
 }

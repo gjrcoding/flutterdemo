@@ -1,26 +1,54 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter_app/base/MyAppWidget.dart';
+import 'package:flutterdemos/base/MyAppWidget.dart';
+import 'package:flutterdemos/ireader/CityWidget.dart';
+import 'package:shared_preferences/shared_preferences.dart';
 
 import 'HotMovieListWidget.dart';
 
-void main() {
-  runApp(DouBanWidget());
+class DouBanWidget extends StatefulWidget {
+  @override
+  State<StatefulWidget> createState() {
+    return _DoubanWidgetState();
+  }
 }
 
-class DouBanWidget extends StatelessWidget {
+class _DoubanWidgetState extends State<DouBanWidget> {
+  var _currentCity = '上海';
+
+  @override
+  void initState() {
+    // TODO: implement initState
+    super.initState();
+    initData();
+  }
+
+  void initData() async {
+    final prefs = await SharedPreferences.getInstance(); //获取 prefs
+
+    String city = prefs.getString("currCity");
+    if (city != null && !city.isEmpty) {
+      setState(() {
+        _currentCity = city;
+      });
+    } else {
+      setState(() {
+        _currentCity = "上海";
+      });
+    }
+  }
+
   @override
   Widget build(BuildContext context) {
+    double paddingTop = MediaQuery.of(context).padding.top;
     return MaterialApp(
-      title: 'douban',
-      theme: ThemeData(),
-      home: Scaffold(
-        appBar: MyAppWidget.appBarWidget(context, 'douban'),
-        body: Column(
-          children: <Widget>[getSearchWidget(), getTabBarWidget()],
-        ),
+        home: Scaffold(
+            body: Container(
+      margin: EdgeInsets.fromLTRB(0, paddingTop + 10, 0, 5),
+      child: Column(
+        children: <Widget>[getSearchWidget(), getTabBarWidget()],
       ),
-    );
+    )));
   }
 
   Widget getTabBarWidget() {
@@ -31,9 +59,7 @@ class DouBanWidget extends StatelessWidget {
         child: Column(
           children: <Widget>[
             Container(
-              constraints: BoxConstraints.expand(
-                height:50
-              ),
+              constraints: BoxConstraints.expand(height: 50),
               child: TabBar(
                 unselectedLabelColor: Colors.black12,
                 labelColor: Colors.black87,
@@ -52,7 +78,7 @@ class DouBanWidget extends StatelessWidget {
               child: Container(
                 child: TabBarView(
                   children: <Widget>[
-                    HotMovieListWidget(),
+                    HotMovieListWidget(_currentCity),
                     Center(
                       child: Text('电视'),
                     )
@@ -73,12 +99,32 @@ class DouBanWidget extends StatelessWidget {
           padding: EdgeInsets.all(10),
           child: Row(
             children: <Widget>[
-              Text('上海'),
+              Builder(builder: (context) {
+                return GestureDetector(
+                  child: Text(_currentCity),
+                  onTap: () {
+                    _jumtToCityWidget();
+                  },
+                );
+              }),
               Icon(Icons.arrow_drop_down),
               Expanded(child: searchInputWidget())
             ],
           ),
         ));
+  }
+
+  void _jumtToCityWidget() async {
+    var selectCity = await Navigator.of(context)
+        .pushNamed('/Citys', arguments: _currentCity);
+    if (selectCity == null) {
+      return;
+    }
+    final prefs = await SharedPreferences.getInstance();
+    prefs.setString('currCity', selectCity); //存取数据
+    setState(() {
+      _currentCity = selectCity;
+    });
   }
 
   Widget searchInputWidget() {
