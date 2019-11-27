@@ -8,7 +8,7 @@ void main() => runApp(AboutDialogWidget());
  * 2、showDialog()
  */
 
-class AboutDialogWidget extends StatelessWidget{
+class AboutDialogWidget extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
@@ -16,16 +16,17 @@ class AboutDialogWidget extends StatelessWidget{
       theme: ThemeData(),
       home: Scaffold(
         appBar: MyAppWidget.appBarWidget(context, 'hello dialog'),
-        body: Builder(builder: (context)=> RaisedButton(
-          onPressed: (){
-            showAboutDialog(context: context,
-            applicationName: '对话框',
-            applicationVersion: '1.0.0');
-          },
-          child: Text('RaisedButton'),
-        )),
+        body: Builder(
+            builder: (context) => RaisedButton(
+                  onPressed: () {
+                    showAboutDialog(
+                        context: context,
+                        applicationName: '对话框',
+                        applicationVersion: '1.0.0');
+                  },
+                  child: Text('RaisedButton'),
+                )),
       ),
     );
   }
 }
-

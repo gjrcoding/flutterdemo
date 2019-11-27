@@ -1,6 +1,12 @@
 import 'package:flutter/material.dart';
+import 'package:flutterdemos/dialog/AboutDialogWidget.dart';
+import 'package:flutterdemos/dialog/DialogDemoWidget.dart';
+import 'package:flutterdemos/dialog/ModalBottomSheetWidget.dart';
+import 'package:flutterdemos/dialog/MyAlertWidget.dart';
+import 'package:flutterdemos/dialog/PersistentBottomSheetWidget.dart';
 import 'package:flutterdemos/ireader/tab_navigator.dart';
 
+import 'dialog/CupertinoAlertWidget.dart';
 import 'ireader/CityWidget.dart';
 
 void main() => runApp(MyApp());
@@ -27,6 +33,21 @@ class MyApp extends StatelessWidget {
       routes: {
         '/Citys': (context) {
           return CityWidget();
+        },
+        '/AlertDialogs': (context) {
+          return MyAlertWidget();
+        },
+        '/AboutDialogs': (context) {
+          return AboutDialogWidget();
+        },
+        '/CupertinoAlertWidget':(context){
+          return CupertinoAlertWidget();
+        },
+        '/BottomSheetWidget':(context){
+          return BottomSheetWidget();
+        },
+        '/PersistentBottomSheetWidget':(context){
+          return PersistentBottomSheetWidget();
         }
       },
     );

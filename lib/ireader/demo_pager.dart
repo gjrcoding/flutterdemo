@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutterdemos/boxconstraint/BoundedConstraintWidget.dart';
 import 'package:flutterdemos/boxconstraint/InfiniteConstraintWidget.dart';
 import 'package:flutterdemos/dialog/AlertDialog.dart';
+import 'package:flutterdemos/dialog/DialogDemoWidget.dart';
 import 'package:flutterdemos/funcwidget/DeviceTools.dart';
 import 'package:flutterdemos/gesture/GestureWidget.dart';
 import 'package:flutterdemos/http/JsonLoaderLoading.dart';
@@ -30,7 +31,7 @@ class DemoListWidget extends StatelessWidget {
     DemoRoutes('http', JsonLoading()),
     DemoRoutes('gesture', GestureActionWidget()),
     DemoRoutes('funcwidget', MediaQueryWidget()),
-    DemoRoutes('dialog', MyAlertWidget()),
+    DemoRoutes('dialog', DialogDemoWidget()),
     DemoRoutes('constraint', InfiniteConstraintWidget('hello world'))
   ];
 
