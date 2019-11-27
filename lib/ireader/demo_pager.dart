@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:flutterdemos/anim/AnimatedDemoWidget.dart';
+import 'package:flutterdemos/anim/FirstHeroPage.dart';
 import 'package:flutterdemos/boxconstraint/BoundedConstraintWidget.dart';
 import 'package:flutterdemos/boxconstraint/InfiniteConstraintWidget.dart';
 import 'package:flutterdemos/dialog/AlertDialog.dart';
@@ -32,7 +34,9 @@ class DemoListWidget extends StatelessWidget {
     DemoRoutes('gesture', GestureActionWidget()),
     DemoRoutes('funcwidget', MediaQueryWidget()),
     DemoRoutes('dialog', DialogDemoWidget()),
-    DemoRoutes('constraint', InfiniteConstraintWidget('hello world'))
+    DemoRoutes('constraint', InfiniteConstraintWidget('hello world')),
+    DemoRoutes('animator', MyAnimatedPage()),
+    DemoRoutes('page animator', FirstHeroPage())
   ];
 
   @override
