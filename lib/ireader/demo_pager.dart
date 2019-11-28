@@ -6,6 +6,7 @@ import 'package:flutterdemos/boxconstraint/InfiniteConstraintWidget.dart';
 import 'package:flutterdemos/dialog/AlertDialog.dart';
 import 'package:flutterdemos/dialog/DialogDemoWidget.dart';
 import 'package:flutterdemos/funcwidget/DeviceTools.dart';
+import 'package:flutterdemos/gesture/DissmissibleWidget.dart';
 import 'package:flutterdemos/gesture/GestureWidget.dart';
 import 'package:flutterdemos/http/JsonLoaderLoading.dart';
 import 'package:flutterdemos/image/NetImageWidget.dart';
@@ -36,7 +37,8 @@ class DemoListWidget extends StatelessWidget {
     DemoRoutes('dialog', DialogDemoWidget()),
     DemoRoutes('constraint', InfiniteConstraintWidget('hello world')),
     DemoRoutes('animator', MyAnimatedPage()),
-    DemoRoutes('page animator', FirstHeroPage())
+    DemoRoutes('page animator', FirstHeroPage()),
+    DemoRoutes('滑动删除', DissmissibleWidget())
   ];
 
   @override
