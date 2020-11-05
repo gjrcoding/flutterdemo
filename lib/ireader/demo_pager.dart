@@ -9,7 +9,11 @@ import 'package:flutterdemos/funcwidget/DeviceTools.dart';
 import 'package:flutterdemos/gesture/DissmissibleWidget.dart';
 import 'package:flutterdemos/gesture/GestureWidget.dart';
 import 'package:flutterdemos/http/JsonLoaderLoading.dart';
+import 'package:flutterdemos/image/CachedNetImageWidget.dart';
+import 'package:flutterdemos/image/ImageWidget.dart';
+import 'package:flutterdemos/image/ImageWidgetFile.dart';
 import 'package:flutterdemos/image/NetImageWidget.dart';
+import 'package:flutterdemos/image/PlaceHolderImageWidget.dart';
 import 'package:flutterdemos/layout/ColumnWidget.dart';
 import 'package:flutterdemos/menu/MenuWidget.dart';
 import 'package:flutterdemos/text/TextWidget.dart';
@@ -30,7 +34,7 @@ class DemoListWidget extends StatelessWidget {
     DemoRoutes('toast', SnackBarWidget()),
     DemoRoutes('menu', MenuWidget()),
     DemoRoutes('layout', ColumnWidget()),
-    DemoRoutes('image', NetImageWidget()),
+    DemoRoutes('image', CachedNetImageWidget()),
     DemoRoutes('http', JsonLoading()),
     DemoRoutes('gesture', GestureActionWidget()),
     DemoRoutes('funcwidget', MediaQueryWidget()),

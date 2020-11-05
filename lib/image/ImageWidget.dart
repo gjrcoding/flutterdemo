@@ -11,7 +11,13 @@ class ImageWidget extends StatelessWidget{
       theme: ThemeData(),
       home: Scaffold(
         appBar: MyAppWidget.appBarWidget(context, "Flutter UI基础Widget -- 图片"),
-        body: Image.asset('images/60f10f01gy1g7r31tzp8ej221634o1ky.jpg', fit: BoxFit.cover,)
+//        body: Image.asset('images/60f10f01gy1g7r31tzp8ej221634o1ky.jpg', fit: BoxFit.cover,)
+      body: Container(
+          child:Image(
+            image:  AssetImage('images/60f10f01gy1g7r31tzp8ej221634o1ky.jpg'),
+            fit: BoxFit.cover,
+          ),
+      ),
       ),
     );
   }
