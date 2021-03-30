@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:flutterdemos/ireader/custom_appbar.dart';
+import 'package:flutterdemos/webview/WebViewWidget.dart';
 import 'demo_pager.dart';
 import 'doubanwidget.dart';
 
@@ -48,7 +49,7 @@ class _ContentViewPagerState extends State<ContentViewPager> {
           children: <Widget>[
             DemoListWidget(),
             DouBanWidget(),
-            _wrapPageItem(2),
+            MyWebViewWidget(),
             _wrapPageItem(3),
           ],
           onPageChanged: widget.onPageChanged,

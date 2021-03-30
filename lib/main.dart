@@ -5,6 +5,7 @@ import 'package:flutterdemos/dialog/ModalBottomSheetWidget.dart';
 import 'package:flutterdemos/dialog/MyAlertWidget.dart';
 import 'package:flutterdemos/dialog/PersistentBottomSheetWidget.dart';
 import 'package:flutterdemos/ireader/tab_navigator.dart';
+import 'package:flutterdemos/webview/WebViewWidget.dart';
 
 import 'dialog/CupertinoAlertWidget.dart';
 import 'ireader/CityWidget.dart';
@@ -48,6 +49,9 @@ class MyApp extends StatelessWidget {
         },
         '/PersistentBottomSheetWidget':(context){
           return PersistentBottomSheetWidget();
+        },
+        '/WebViewWidget':(context){
+          return MyWebViewWidget();
         }
       },
     );
