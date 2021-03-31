@@ -1,11 +1,11 @@
 import 'package:flutter/material.dart';
-import 'package:flutterdemos/dialog/AboutDialogWidget.dart';
-import 'package:flutterdemos/dialog/DialogDemoWidget.dart';
-import 'package:flutterdemos/dialog/ModalBottomSheetWidget.dart';
-import 'package:flutterdemos/dialog/MyAlertWidget.dart';
-import 'package:flutterdemos/dialog/PersistentBottomSheetWidget.dart';
-import 'package:flutterdemos/ireader/tab_navigator.dart';
-import 'package:flutterdemos/webview/WebViewWidget.dart';
+import 'package:flutter_app/dialog/AboutDialogWidget.dart';
+import 'package:flutter_app/dialog/DialogDemoWidget.dart';
+import 'package:flutter_app/dialog/ModalBottomSheetWidget.dart';
+import 'package:flutter_app/dialog/MyAlertWidget.dart';
+import 'package:flutter_app/dialog/PersistentBottomSheetWidget.dart';
+import 'package:flutter_app/ireader/tab_navigator.dart';
+import 'package:flutter_app/webview/WebViewWidget.dart';
 
 import 'dialog/CupertinoAlertWidget.dart';
 import 'ireader/CityWidget.dart';

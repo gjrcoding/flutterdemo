@@ -1,9 +1,9 @@
 import 'dart:convert';
 
 import 'package:flutter/material.dart';
-import 'package:flutterdemos/http/HtoMovieData.dart';
-import 'package:flutterdemos/ireader/DoubanHotMovieWidget.dart';
-import 'package:flutterdemos/ireader/HotMovieItem.dart';
+import 'package:flutter_app/http/HtoMovieData.dart';
+import 'package:flutter_app/ireader/DoubanHotMovieWidget.dart';
+import 'package:flutter_app/ireader/HotMovieItem.dart';
 import 'package:http/http.dart' as http;
 import 'package:shared_preferences/shared_preferences.dart';
 

@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:english_words/english_words.dart';
-import 'package:flutterdemos/base/MyAppWidget.dart';
+import 'package:flutter_app/base/MyAppWidget.dart';
 
 void main() => runApp(TextWidget());
 

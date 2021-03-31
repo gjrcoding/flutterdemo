@@ -1,7 +1,7 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import 'package:flutterdemos/base/MyAppWidget.dart';
-import 'package:flutterdemos/ireader/CityWidget.dart';
+import 'package:flutter_app/base/MyAppWidget.dart';
+import 'package:flutter_app/ireader/CityWidget.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 
 import 'HotMovieListWidget.dart';

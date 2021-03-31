@@ -1,6 +1,6 @@
 import 'package:cached_network_image/cached_network_image.dart';
 import 'package:flutter/material.dart';
-import 'package:flutterdemos/base/MyAppWidget.dart';
+import 'package:flutter_app/base/MyAppWidget.dart';
 
 void main() => runApp(CachedNetImageWidget());
 

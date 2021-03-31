@@ -1,7 +1,7 @@
 import 'dart:io';
 
 import 'package:flutter/material.dart';
-import 'package:flutterdemos/base/MyAppWidget.dart';
+import 'package:flutter_app/base/MyAppWidget.dart';
 import 'package:path_provider/path_provider.dart';
 
 void main() => runApp(ImageWidgetFile());

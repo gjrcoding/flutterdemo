@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
-import 'package:flutterdemos/ireader/custom_appbar.dart';
-import 'package:flutterdemos/webview/WebViewWidget.dart';
+import 'package:flutter_app/ireader/custom_appbar.dart';
+import 'package:flutter_app/webview/WebViewWidget.dart';
 import 'demo_pager.dart';
 import 'doubanwidget.dart';
 

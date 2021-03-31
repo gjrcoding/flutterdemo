@@ -1,7 +1,7 @@
 import 'dart:convert';
 
 import 'package:flutter/material.dart';
-import 'package:flutterdemos/base/MyAppWidget.dart';
+import 'package:flutter_app/base/MyAppWidget.dart';
 import 'package:http/http.dart' as http;
 void main() {
   runApp(JsonLoading());

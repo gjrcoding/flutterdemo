@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:flutterdemos/ireader/content_viewpager.dart';
+import 'package:flutter_app/ireader/content_viewpager.dart';
 
 import 'custom_appbar.dart';
 

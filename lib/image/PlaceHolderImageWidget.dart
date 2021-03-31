@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:flutterdemos/base/MyAppWidget.dart';
+import 'package:flutter_app/base/MyAppWidget.dart';
 import 'package:transparent_image/transparent_image.dart';
 
 void main() => runApp(PlaceHolderImageWidget());
